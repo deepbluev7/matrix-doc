@@ -560,6 +560,10 @@ A request to an endpoint that uses User-Interactive Authentication never
 succeeds without auth. Homeservers may allow requests that don't require
 auth by offering a stage with only the `m.login.dummy` auth type, but they
 must still give a 401 response to requests with no auth data.
+
+Homeservers must give a 401 response even if other required parameters are
+missing. Clients can use this to discover the supported stages before
+prompting the user for any of the required parameters.
 {{% /boxes/note %}}
 
 #### Example
